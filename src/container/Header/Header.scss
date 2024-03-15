@@ -159,17 +159,29 @@
     div:nth-child(1) {
         width: 120px;
         height: 120px;
+        background: url('../../assets/postgres-skill-background.png');
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
     }
 
     div:nth-child(2) {
         margin: 1.75rem;
         width: 140px;
         height: 140px;
+        background: url('../../assets/android-skill-background.png');
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
     }
 
     div:nth-child(3) {
         width: 100px;
         height: 100px;
+        background: url('../../assets/tensorflow-skill-background.png');
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
     }
 
     @media screen and (max-width: 1200px) {
