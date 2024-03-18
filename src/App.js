@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { 
+import {
     About,
     Footer,
     Header,
@@ -14,13 +14,13 @@ import './App.scss'
 const App = () => {
     return (
         <div className='app'>
-            <Navbar/>
-            <Header/>
-            <Home/>
-            <About/>
-            <Projects/>
-            <Skills/>
-            <Footer/>
+            <Navbar />
+            <Header />
+            <Home />
+            <About />
+            <Projects />
+            <Skills />
+            <Footer />
         </div>
     )
 }

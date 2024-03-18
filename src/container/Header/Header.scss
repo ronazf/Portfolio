@@ -1,9 +1,7 @@
 #home {
+    height: 100vh;
+    display: fixed;
     position: relative;
-    background: url('../../assets/background.png');
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center;
 
     .app__wrapper {
         padding: 0;
@@ -17,193 +15,374 @@
 .app__header {
     flex: 1;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 6rem 2rem;
+    padding: 1rem 1rem;
     align-items: center;
-    justify-content: center;
-
-    @media screen and (max-width: 1200px) {
-        flex-direction: column-reverse;
-    }
+    justify-content: flex-start;
 }
 
-.app__header-badge {
-    display: flex;
-    margin: 6rem 2rem;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-
-    .badge-cmp {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+.app__header-box {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--tertiary-color);
+    border: var(--white-color);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.3);
 }
 
 .app__header-intro {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
 
-    @media screen and (max-width: 1200px) {
-        text-align: center;
-        padding-top: 2rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.app__header-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    width: 100%;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1300px) {
+        padding: 2rem;
     }
 }
 
-.app__header-contact {
-    flex: 1;
+.app__header-sticker {
+    flex-wrap: wrap;
     display: flex;
+    flex-direction: row;
+
     width: 100%;
-    justify-content: left;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 1300px) {
+        justify-content: center;
+    }
+}
+
+.app__header-welcome {
+    display: flex;
+    flex-direction: column;
+
     align-items: flex-start;
+    justify-content: flex-start;
 
-    li {
-        margin: 1rem 1rem 0 0;
-        cursor: pointer;
+    div {
+        display: flex;
+        flex-direction: row;
 
-        flex-direction: column;
+        margin: 0 0.5rem;
+        align-items: center;
+        justify-content: center;
 
-        a {
-            color: var(--black-color);
-            text-decoration: none;
-            flex-direction: column;
-
-            text-transform: uppercase;
-            font-weight: 500;
-            
-            transition: all 0.3s ease-in-out;
-
-            svg {
-                width: 25px;
-                height: 25px;
-    
-                cursor: pointer;
-            }
+        div:nth-child(1) {
+            font-size: 2rem;
         }
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1300px) {
         justify-content: center;
+
+        padding: 1rem;
+    }
+
+    @media screen and (max-width: 850px) {
+        flex: 1 0 100%;
         align-items: center;
     }
 }
 
-.app__header-profile {
+.app__header-experience {
+    order: 2;
     display: flex;
-    height: 100%;
-    margin: 6rem 2rem;
     flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: center;
 
-    img {
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
 
-        box-shadow: 0 0 50px rgba($color: #a8a8a8, $alpha: 0.25);
+    div {
+        display: flex;
 
-        @media screen and (min-width: 2000px) {
-            width: 800px;
-            height: 800px;
-        }
+        align-items: center;
+        justify-content: center;
+    }
 
-        @media screen and (max-width: 1200px) {
-            width: 350px;
-            height: 350px;
+    div:nth-child(1) {
+        margin-bottom: 2rem;
+    }
+
+    @media screen and (max-width: 1300px) {
+        order: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+
+        div:nth-child(1) {
+            margin-bottom: 0;
+            margin-right: 2rem;
         }
     }
 
-    @media screen and (max-width: 1200px) {
-            margin: 2rem 6rem;
+    @media screen and (max-width: 850px) {
+        flex: 1 0 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        div:nth-child(1) {
+            margin: 0 2rem 2rem 2rem;
+        }
     }
 }
 
 .app__header-skill {
     flex: 0.75;
+    order: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-left: 1rem;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
 
-    div {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: var(--white-color);
-        box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
-
-        svg, img {
-            width: 100%;
-            height: 100%;
-
-            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-            
-        }
+    @media screen and (max-width: 600px) {
+        flex: 1 0 100%;
     }
 
-    div:nth-child(1) {
-        width: 120px;
-        height: 120px;
-        background: url('../../assets/postgres-skill-background.png');
-        background-size: cover;
-        background-repeat: repeat;
-        background-position: center;
-    }
-
-    div:nth-child(2) {
-        margin: 1.75rem;
-        width: 140px;
-        height: 140px;
-        background: url('../../assets/android-skill-background.png');
-        background-size: cover;
-        background-repeat: repeat;
-        background-position: center;
-    }
-
-    div:nth-child(3) {
-        width: 100px;
-        height: 100px;
-        background: url('../../assets/tensorflow-skill-background.png');
-        background-size: cover;
-        background-repeat: repeat;
-        background-position: center;
-    }
-
-    @media screen and (max-width: 1200px) {
-        flex-direction: row;
-    }
-
-    @media screen and (max-width: 650px) {
-        flex-direction: row;
+    #left {
+        justify-content: flex-start;
 
         div:nth-child(1) {
-            width: 80px;
-            height: 80px;
+            width: 130px;
+            height: 130px;
+
+            margin: 6rem 5rem 1rem 0;
+
+            @media screen and (max-width: 1300px) {
+                width: 120px;
+                height: 120px;
+
+                margin: 8rem 3rem 1rem 0;
+            }
+
+            @media screen and (max-width: 850px) {
+                width: 110px;
+                height: 110px;
+
+                margin: 6rem 2rem 1rem 0;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 100px;
+                height: 100px;
+
+                margin: 4rem 1rem 1rem 0;
+            }
         }
-    
+
+        div:nth-child(2) {
+            width: 110px;
+            height: 110px;
+
+            margin: 1rem 5rem 10rem 1rem;
+
+            @media screen and (max-width: 1300px) {
+                width: 100px;
+                height: 100px;
+
+                margin: 1rem 1rem 8rem 1rem;
+            }
+
+            @media screen and (max-width: 850px) {
+                width: 90px;
+                height: 90px;
+
+                margin: 1rem 1rem 6rem 1rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 80px;
+                height: 80px;
+
+                margin: 1rem 1rem 4rem 1rem;
+            }
+        }
+    }
+
+    #right {
+        justify-content: flex-end;
+
+        div:nth-child(1) {
+            width: 120px;
+            height: 120px;
+
+            margin: 1rem 5rem 10rem 10rem;
+
+            @media screen and (max-width: 1300px) {
+                width: 110px;
+                height: 110px;
+
+                margin: 1rem 4rem 8rem 6rem;
+            }
+
+            @media screen and (max-width: 850px) {
+                width: 100px;
+                height: 100px;
+
+                margin: 1rem 3rem 6rem 4rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 90px;
+                height: 90px;
+
+                margin: 1rem 2rem 4rem 2rem;
+            }
+        }
+
         div:nth-child(2) {
             width: 100px;
             height: 100px;
-        }
-    
-        div:nth-child(3) {
-            width: 60px;
-            height: 60px;
+
+            margin: 1rem 0 1rem 0;
+
+            @media screen and (max-width: 1300px) {
+                width: 90px;
+                height: 90px;
+
+                margin: 1rem 0 1rem 0;
+            }
+
+            @media screen and (max-width: 850px) {
+                width: 80px;
+                height: 80px;
+
+                margin: 1rem 0 1rem 0;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 70px;
+                height: 70px;
+
+                margin: 1rem 0 1rem 0;
+            }
         }
     }
+
+    @media screen and (max-width: 1300px) {
+        flex: 1 0 100%;
+
+        padding: 1rem;
+    }
+}
+
+
+.app__header-skill-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        width: 50%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        svg,
+        img {
+            width: 75%;
+            height: 75%;
+            background-position: center;
+            background-clip: content-box;
+            background-color: var(--secondary-color);
+            border-radius: 100%;
+
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+        }
+
+        .app__header-icon-tertiary {
+            background-color: var(--tertiary-color);
+        }
+
+        #gear {
+            width: inherit;
+            height: inherit;
+
+            background-color: transparent;
+
+        }
+    }
+}
+
+.app__header-homescreen {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.app__header-homebackground {
+    width: 1000px;
+
+    @media screen and (max-width: 1300px) {
+        width: 800px;
+    }
+
+    @media screen and (max-width: 850px) {
+        width: 650px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 500px;
+    }
+}
+
+.app__header-gear {
+    order: 1;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    flex-basis: auto;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--secondary-color);
+}
+
+.app__header-gear-tertiary {
+    color: var(--tertiary-color);
+}
+
+.app__header-gear-middle {
+    order: 0;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
 }

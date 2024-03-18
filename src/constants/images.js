@@ -1,8 +1,8 @@
 import logo from '../assets/logo.png';
-import profile from '../assets/profile.png';
 import tensorflow from '../assets/tensorflow.png';
+import { ReactComponent as Homepage } from '../assets/homepage.svg';
 import background from '../assets/background.png';
 
-const exports = { logo, profile, tensorflow, background };
+const exports = { logo, Homepage, tensorflow, background };
 
 export default exports;

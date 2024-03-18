@@ -1,93 +1,179 @@
 import React from 'react';
 import { IconContext } from "react-icons";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { BiLogoGmail, BiLogoPostgresql } from "react-icons/bi";
+import { BiLogoPostgresql, BiLogoReact } from "react-icons/bi";
+import { FaGear } from "react-icons/fa6";
+
 import { FcAndroidOs } from "react-icons/fc";
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
+import { AppWrap } from '../../wrapper';
 
 import { images } from '../../constants';
 import './Header.scss';
 
 const Header = () => {
+  const turnScale = 1.15;
+  const turnRotate = 360;
+  const turnMotionTransition = {
+    duration: 1
+  };
+  const turnMotionVarients = {
+    transformation: {
+      scale: 1.15,
+      rotate: 360,
+    }
+  };
+
+  const shakeScale = 1.15;
+  const shakeRotate = [0, -10, 10, -10, 0];
+  const shakeMotionTransition = {
+    duration: 1
+  };
+  const shakeMotionVarients = {
+    transformation: {
+      scale: shakeScale,
+      rotate: shakeRotate,
+    }
+  };
   return (
     <div id='home' className='app__header app__flex'>
-      <motion.div
-        initial={{ opacity: 0, x: '-100%' }}
-        exit={{ opacity: 0, x: '-100%' }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2 }}
-        className='app__header-info'
-      >
-        <div className='app__header-badge'>
-          <div className='badge-cmp app__flex'>
-            <div className='p-text'>
-              <p className='header-text'>Ronaz Farahmand</p>
-              <div className='app__header-intro'>
-                <p>
-                  Hey there! I’m Ronaz, a student passionate about software development,
-                  with proficiency in a wide range of languages such as SQL, C++, Rust, Java
-                  and experience in mobile and web development.
+      <div className='app__header-intro'>
+        <motion.div
+          initial={{ opacity: 0, y: '-100%' }}
+          exit={{ opacity: 0, y: '-100%' }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2 }}
+        >
+          <div className='p-text app__header-info'>
+            <p className='header-text'>Ronaz <span>Farahmand</span></p>
+            <p className='title-text'>Software Engineer</p>
+          </div>
+        </motion.div>
+        <div className='app__header-homescreen'>
+          <motion.div
+            initial={{ opacity: 0, y: '100%' }}
+            exit={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2 }}
+          >
+            <div className='app__header-homebackground'>
+              <images.Homepage />
+            </div>
+          </motion.div>
+        </div>
+        <div className='app__header-sticker'>
+          <motion.div className='p-text app__header-welcome'>
+            <div className='app__header-box'>
+              <motion.div
+                variants={shakeMotionVarients}
+                whileHover='transformation'
+                whileTap='transformation'
+                transition={shakeMotionTransition}
+              >
+                <p className='emoji'>👋</p>
+              </motion.div>
+              <div>
+                <p>Hi there,
+                  <br />
+                  <span>I'm </span>
+                  <span className='bold-text'>Ronaz</span>
                 </p>
               </div>
             </div>
-            <ul className='app__header-contact'>
-              <li className='app__flex' key='gmailLogo'>
-                <a href='mailto:ronazfarahmand1@gmail.com' target='_blank' rel='noopener noreferrer'>
-                  <IconContext.Provider value={{ color: '#c71610', className: 'global-class-name' }}>
-                    <div>
-                      <BiLogoGmail />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </li>
-              <li className='app__flex' key={'githubLogo'}>
-                <a href='https://github.com/ronazf' target='_blank' rel='noopener noreferrer'>
-                  <IconContext.Provider value={{ color: 'black', className: 'global-class-name' }}>
-                    <div>
-                      <AiFillGithub />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </li>
-              <li className='app__flex' key={'linkedinLogo'}>
-                <a href='https://www.linkedin.com/in/ronazfarahmand' target='_blank' rel='noopener noreferrer'>
-                  <IconContext.Provider value={{ color: '#0077b5', className: 'global-class-name' }}>
-                    <div>
-                      <AiFillLinkedin />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </li>
-            </ul>
+          </motion.div>
+          <div className='p-text app__header-experience'>
+            <div className='app__header-box'>
+              <p>
+                <span>I have experience in:</span>
+                <br />
+                <span className='bold-text'>Mobile </span><span>Development</span>
+                <br />
+                <span className='bold-text'>Web </span><span>Development</span>
+              </p>
+            </div>
+            <div id='interest' className='app__header-box'>
+              <p>
+                <span>I'm interested in:</span>
+                <br />
+                <span className='bold-text'>Machine Learning</span>
+              </p>
+            </div>
           </div>
-        </div>
-      </motion.div>
-      <div className='app__header-skill'>
-        <IconContext.Provider value={{ color: '#0064a5', className: 'global-class-name' }}>
-          <div>
-            <BiLogoPostgresql />
+          <div className='app__header-skill'>
+            <motion.div
+              initial={{ opacity: 0, x: '-100%' }}
+              exit={{ opacity: 0, x: '-100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2 }}
+              className='app__header-skill-detail'
+              id='left'
+            >
+              <motion.div
+                variants={turnMotionVarients}
+                whileHover='transformation'
+                whileTap='transformation'
+                transition={turnMotionTransition}
+                className='app__icon'
+              >
+                <IconContext.Provider value={{ className: 'app__header-gear' }}>
+                  <FaGear id='gear' />
+                </IconContext.Provider>
+                <FcAndroidOs className='app__header-gear-middle' />
+              </motion.div>
+              <IconContext.Provider value={{ color: '#0064a5' }}>
+                <motion.div
+                  variants={turnMotionVarients}
+                  whileHover='transformation'
+                  whileTap='transformation'
+                  transition={turnMotionTransition}
+                  className='app__icon'
+                >
+                  <IconContext.Provider value={{ className: 'app__header-gear app__header-gear-tertiary' }}>
+                    <FaGear id='gear' />
+                  </IconContext.Provider>
+                  <BiLogoPostgresql className='app__header-gear-middle app__header-icon-tertiary' />
+                </motion.div>
+              </IconContext.Provider>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: '100%' }}
+              exit={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2 }}
+              className='app__header-skill-detail'
+              id='right'
+            >
+              <IconContext.Provider value={{ color: '#61dbfb' }}>
+                <motion.div
+                  variants={turnMotionVarients}
+                  whileHover='transformation'
+                  whileTap='transformation'
+                  transition={turnMotionTransition}
+                  className='app__icon'
+                >
+                  <IconContext.Provider value={{ className: 'app__header-gear' }}>
+                    <FaGear id='gear' />
+                  </IconContext.Provider>
+                  <BiLogoReact className='app__header-gear-middle' />
+                </motion.div>
+              </IconContext.Provider>
+              <motion.div
+                variants={turnMotionVarients}
+                whileHover='transformation'
+                whileTap='transformation'
+                transition={turnMotionTransition}
+                className='app__icon'
+              >
+                <IconContext.Provider value={{ className: 'app__header-gear app__header-gear-tertiary' }}>
+                  <FaGear id='gear' />
+                </IconContext.Provider>
+                <img src={images.tensorflow} alt='tensorflow' className='app__header-gear-middle app__header-icon-tertiary' />
+              </motion.div>
+            </motion.div>
           </div>
-        </IconContext.Provider>
-        <div>
-          <FcAndroidOs />
-        </div>
-        <div>
-          <img src={images.tensorflow} alt="tensorflow" />
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, x: '100%' }}
-        exit={{ opacity: 0, x: '100%' }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2 }}
-        className='app__header-info'
-      >
-        <div className='app__header-profile'>
-          <img src={images.profile} alt="profile" />
-        </div>
-      </motion.div>
     </div>
   )
 }
 
-export default Header
+export default AppWrap(Header, 'home')
