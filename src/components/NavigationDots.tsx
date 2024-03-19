@@ -1,10 +1,8 @@
-import React, { FC } from 'react'
-
 interface NavigationDotsProps {
     active: string;
 }
 
-const NavigationDots: FC<NavigationDotsProps> = ({ active }) => {
+const NavigationDots = ({ active }: NavigationDotsProps) => {
     const screens = ['home', 'about', 'projects', 'skills', 'contact'];
     return (
         <div className='app__navigation'>

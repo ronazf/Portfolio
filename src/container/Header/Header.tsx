@@ -9,8 +9,12 @@ import { AppWrap } from '../../wrapper';
 
 import { images } from '../../constants';
 import './Header.scss';
+import { AnimatedText } from '../../types/AnimatedText';
 
 const Header: FC = () => {
+  const componentTransition = {
+    duration: 2
+  };
   const turnScale = 1.15;
   const turnRotate = 360;
   const turnMotionTransition = {
@@ -41,11 +45,11 @@ const Header: FC = () => {
           initial={{ opacity: 0, y: '-100%' }}
           exit={{ opacity: 0, y: '-100%' }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2 }}
+          transition={componentTransition}
         >
           <div className='p-text app__header-info'>
-            <p className='header-text'>Ronaz <span>Farahmand</span></p>
-            <p className='title-text'>Software Engineer</p>
+            <AnimatedText textClass={[['Ronaz '], ['Farahmand', 'tertiary-text']]} className='header-text'/>
+            <motion.p className='title-text'>Software Engineer</motion.p>
           </div>
         </motion.div>
         <div className='app__header-homescreen'>
@@ -53,7 +57,7 @@ const Header: FC = () => {
             initial={{ opacity: 0, y: '100%' }}
             exit={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2 }}
+            transition={componentTransition}
           >
             <div className='app__header-homebackground'>
               <images.Homepage />
@@ -103,7 +107,7 @@ const Header: FC = () => {
               initial={{ opacity: 0, x: '-100%' }}
               exit={{ opacity: 0, x: '-100%' }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 2 }}
+              transition={componentTransition}
               className='app__header-skill-detail'
               id='left'
             >
@@ -138,7 +142,7 @@ const Header: FC = () => {
               initial={{ opacity: 0, x: '100%' }}
               exit={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 2 }}
+              transition={componentTransition}
               className='app__header-skill-detail'
               id='right'
             >
