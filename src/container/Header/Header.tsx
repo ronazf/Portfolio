@@ -1,182 +1,67 @@
-import React, { FC } from 'react';
-import { IconContext } from "react-icons";
-import { BiLogoPostgresql, BiLogoReact } from "react-icons/bi";
-import { FaGear } from "react-icons/fa6";
+import React, { FC, useRef, useState } from 'react';
 
-import { FcAndroidOs } from "react-icons/fc";
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
 
-import { images } from '../../constants';
+import { info } from '../../types';
 import './Header.scss';
 import { AnimatedText } from '../../types/AnimatedText';
+import * as THREE from 'three';
+import { Object3D } from 'three';
+import { Canvas, extend } from '@react-three/fiber';
+import { View } from '@react-three/drei';
+import { Model } from '../../components';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import FBOParticles from '../../components/Geometry/FBOParticles';
 
 const Header: FC = () => {
-  const componentTransition = {
-    duration: 2
-  };
-  const turnScale = 1.15;
-  const turnRotate = 360;
-  const turnMotionTransition = {
-    duration: 1
-  };
-  const turnMotionVarients = (rotateDirection: number = 1) => ({
-    transformation: {
-      scale: turnScale,
-      rotate: rotateDirection * turnRotate,
-    }
+  extend({ TextGeometry })
+  type Object3D = typeof Object3D;
+  const personalInfo = info.personalInfo;
+  const role = info.role;
+  const roleLastIndex = role.fields.length - 1;
+  const filedSeperator = ' . ';
+  const animatedRoles: [string, string?][] = [];
+  role.fields.forEach((field, index) => {
+    const modifiedField = field + (index !== roleLastIndex ? filedSeperator : '');
+    animatedRoles.push([modifiedField]);
   });
 
-  const shakeScale = 1.15;
-  const shakeRotate = [0, -10, 10, -10, 0];
-  const shakeMotionTransition = {
-    duration: 1
-  };
-  const shakeMotionVarients = {
-    transformation: {
-      scale: shakeScale,
-      rotate: shakeRotate,
-    }
-  };
+  const points = useRef();
+  const simulationMaterialRef = useRef();
+
+  const shape = <FBOParticles points={points} simulationMaterialRef={simulationMaterialRef} />
+
+  const cameraControlModel = useRef<Object3D>(null);
+
+  const model = useRef(new THREE.Group());
+
+  const [_, setModelRotation] = useState(0);
+
   return (
-    <div id='home' className='app__header app__flex'>
-      <div className='app__header-intro'>
-        <motion.div
-          initial={{ opacity: 0, y: '-100%' }}
-          exit={{ opacity: 0, y: '-100%' }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={componentTransition}
-        >
-          <div className='p-text app__header-info'>
-            <AnimatedText textClass={[['Ronaz '], ['Farahmand', 'tertiary-text']]} className='header-text'/>
-            <motion.p className='title-text'>Software Engineer</motion.p>
-          </div>
-        </motion.div>
-        <div className='app__header-homescreen'>
-          <motion.div
-            initial={{ opacity: 0, y: '100%' }}
-            exit={{ opacity: 0, y: '100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={componentTransition}
-          >
-            <div className='app__header-homebackground'>
-              <images.Homepage />
-            </div>
-          </motion.div>
-        </div>
-        <div className='app__header-sticker'>
-          <motion.div className='p-text app__header-welcome'>
-            <div className='app__header-box'>
-              <motion.div
-                variants={shakeMotionVarients}
-                whileHover='transformation'
-                whileTap='transformation'
-                transition={shakeMotionTransition}
-              >
-                <p className='emoji'>👋</p>
-              </motion.div>
-              <div>
-                <p>Hi there,
-                  <br />
-                  <span>I'm </span>
-                  <span className='bold-text'>Ronaz</span>
-                </p>
-              </div>
-            </div>
-          </motion.div>
-          <div className='p-text app__header-experience'>
-            <div className='app__header-box'>
-              <p>
-                <span>I have experience in:</span>
-                <br />
-                <span className='bold-text'>Mobile </span><span>Development</span>
-                <br />
-                <span className='bold-text'>Web </span><span>Development</span>
-              </p>
-            </div>
-            <div id='interest' className='app__header-box'>
-              <p>
-                <span>I'm interested in:</span>
-                <br />
-                <span className='bold-text'>Machine Learning</span>
-              </p>
-            </div>
-          </div>
-          <div className='app__header-skill'>
-            <motion.div
-              initial={{ opacity: 0, x: '-100%' }}
-              exit={{ opacity: 0, x: '-100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={componentTransition}
-              className='app__header-skill-detail'
-              id='left'
-            >
-              <motion.div
-                variants={turnMotionVarients()}
-                whileHover='transformation'
-                whileTap='transformation'
-                transition={turnMotionTransition}
-                className='app__icon'
-              >
-                <IconContext.Provider value={{ className: 'app__header-gear' }}>
-                  <FaGear id='gear' />
-                </IconContext.Provider>
-                <FcAndroidOs className='app__header-gear-middle' />
-              </motion.div>
-              <IconContext.Provider value={{ color: '#0064a5' }}>
-                <motion.div
-                  variants={turnMotionVarients(-1)}
-                  whileHover='transformation'
-                  whileTap='transformation'
-                  transition={turnMotionTransition}
-                  className='app__icon'
-                >
-                  <IconContext.Provider value={{ className: 'app__header-gear app__header-gear-tertiary' }}>
-                    <FaGear id='gear' />
-                  </IconContext.Provider>
-                  <BiLogoPostgresql className='app__header-gear-middle app__header-icon-tertiary' />
-                </motion.div>
-              </IconContext.Provider>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              exit={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={componentTransition}
-              className='app__header-skill-detail'
-              id='right'
-            >
-              <IconContext.Provider value={{ color: '#61dbfb' }}>
-                <motion.div
-                  variants={turnMotionVarients(1)}
-                  whileHover='transformation'
-                  whileTap='transformation'
-                  transition={turnMotionTransition}
-                  className='app__icon'
-                >
-                  <IconContext.Provider value={{ className: 'app__header-gear' }}>
-                    <FaGear id='gear' />
-                  </IconContext.Provider>
-                  <BiLogoReact className='app__header-gear-middle' />
-                </motion.div>
-              </IconContext.Provider>
-              <motion.div
-                variants={turnMotionVarients(-1)}
-                whileHover='transformation'
-                whileTap='transformation'
-                transition={turnMotionTransition}
-                className='app__icon'
-              >
-                <IconContext.Provider value={{ className: 'app__header-gear app__header-gear-tertiary' }}>
-                  <FaGear id='gear' />
-                </IconContext.Provider>
-                <img src={images.tensorflow} alt='tensorflow' className='app__header-gear-middle app__header-icon-tertiary' />
-              </motion.div>
-            </motion.div>
-          </div>
+    <section id='home' className='app__header app__flex'>
+      <div className='app__header-3d'>
+        <Model
+          groupRef={model}
+          controlRef={cameraControlModel}
+          setRotationState={setModelRotation}
+          shape={shape}
+        />
+        <div className='app__header-3d-div'>
+          <Canvas eventSource={document.getElementById('root')}>
+            <View.Port />
+          </Canvas>
         </div>
       </div>
-    </div>
+      <div className='p-text app__header-info'>
+        <p className='header-text app__header-first-name'>{personalInfo.firstName}</p>
+        <p className='header-lower-text tertiary-text app__header-last-name'>{personalInfo.lastName}</p>
+        <motion.p className='title-text'>{role.name}</motion.p>
+        <div>
+          <AnimatedText element='span' textClass={animatedRoles} className='p-large-text' />
+        </div>
+      </div>
+    </section >
   )
 }
 

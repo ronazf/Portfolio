@@ -1,5 +1,4 @@
 .app {
-    background: radial-gradient(circle, var(--lightgreen-color) 30%, var(--primary-color) 70% );
     background-color: var(--primary-color);
     font-family: var(--font-base);
 }
@@ -56,7 +55,7 @@
 
     p {
         text-transform: uppercase;
-        color: var(--black-color);
+        color: var(--secondary-color);
     }
 }
 
@@ -65,8 +64,8 @@
 }
 
 .header-text {
-    font-size: 6rem;
-    font-weight: 400;
+    font-size: 20rem;
+    font-weight: 800;
     text-align: center;
     line-height: 1.5;
     text-transform: capitalize;
@@ -74,29 +73,59 @@
     padding-top: 1rem;
 
     @media screen and (min-width: 2000px) {
-        font-size: 8rem;
+        font-size: 22rem;
     }
 
-    @media screen and (max-width: 1300px) {
-        font-size: 4rem;
+    @media screen and (max-width: 1700px) {
+        font-size: 15rem;
     }
 
     @media screen and (max-width: 850px) {
-        font-size: 3rem;
+        font-size: 11rem;
     }
 
     @media screen and (max-width: 600px) {
-        font-size: 2.5rem;
+        font-size: 7rem;
     }
 
     @media screen and (max-width: 450px) {
-        font-size: 2rem;
+        font-size: 5rem;
+    }
+}
+
+.header-lower-text {
+    font-size: 18rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: capitalize;
+
+    padding-top: 1rem;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 20rem;
+    }
+
+    @media screen and (max-width: 1700px) {
+        font-size: 13rem;
+    }
+
+    @media screen and (max-width: 850px) {
+        font-size: 9rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 5rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 3rem;
     }
 }
 
 .title-text {
-    font-size: 4rem;
-    font-weight: 400;
+    font-size: 4.5rem;
+    font-weight: 500;
     text-align: center;
     line-height: 1.5;
     color: var(--secondary-color);
@@ -149,6 +178,18 @@
 .p-text {
     font-size: 1rem;
     font-weight: 400;
+    text-align: left;
+    color: var(--secondary-color);
+    line-height: 1.75;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.75rem;
+    }
+}
+
+.p-large-text {
+    font-size: 2rem;
+    font-weight: 300;
     text-align: left;
     color: var(--secondary-color);
     line-height: 1.75;

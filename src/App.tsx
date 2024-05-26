@@ -13,7 +13,7 @@ import './App.scss'
 
 const App: FC = () => {
     return (
-        <div className='app'>
+        <main className='app'>
             <Navbar />
             <Header />
             <Home />
@@ -21,7 +21,7 @@ const App: FC = () => {
             <Projects />
             <Skills />
             <Footer />
-        </div>
+        </main>
     )
 }
 

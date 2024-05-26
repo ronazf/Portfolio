@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { NavigationDots } from '../components'
 
 const AppWrap = (Component: FC, idName: string, classNames?: string) => function HOC() {
     return (
@@ -12,7 +11,6 @@ const AppWrap = (Component: FC, idName: string, classNames?: string) => function
                     <p className='p-text'>All rights reserved</p>
                 </div>
             </div>
-            <NavigationDots active={ idName } />
         </div>
     )
 }

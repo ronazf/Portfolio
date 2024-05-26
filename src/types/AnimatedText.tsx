@@ -20,7 +20,7 @@ const textAnimations = {
         opacity: 1,
         transition: {
             delayChildren: 1,
-            staggerChildren: 0.5,
+            staggerChildren: 0.25,
         }
     }
 };
@@ -44,12 +44,15 @@ export const AnimatedText = ({
             transition={textAnimationDuration}
 
         >
-            {textClass.map((element) => (
-                element[0].split('').map((char) => (
-                    <motion.span variants={textAnimations} className={element[1]}>
-                        {char}
-                    </motion.span>
-                ))
+            {textClass?.map((element) => (
+                <span>
+                    {element[0].split('').map((char) => (
+                        <motion.span variants={textAnimations} className={element[1]}>
+                            {char}
+                        </motion.span>
+                    ))}
+                    <span>&nbsp;</span>
+                </span>
             ))}
         </motion.span>
     </Wrapper>

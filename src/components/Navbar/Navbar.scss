@@ -5,12 +5,12 @@
     justify-content: space-between;
 
     padding: 0.5rem 2rem;
-    background: rgba($color: #8ee4af, $alpha: 0.25);
+    background: rgba($color: var(--primary-color), $alpha: 0.25);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba($color: #8ee4af, $alpha: 0.18);
+    border: 1px solid rgba($color: var(--primary-color), $alpha: 0.18);
     position: fixed;
-    z-index: 2;
+    z-index: 3;
 }
 
 .app__navbar-logo {
@@ -100,6 +100,8 @@
 
         transition: all 0.3s ease-in-out;
 
+        cursor: pointer;
+
         svg {
             display: flex;
             justify-content: center;
@@ -108,7 +110,7 @@
             width: 20px;
             height: 20px;
             border-radius: 25%;
-            color: var(--black-color);
+            color: var(--secondary-color);
         }
 
         &:hover {
@@ -145,7 +147,7 @@
     svg {
         width: 65%;
         height: 65%;
-        color: var(--black-color);
+        color: var(--secondary-color);
 
         cursor: pointer;
     }
@@ -167,14 +169,14 @@
         align-items: flex-end;
         flex-direction: column;
 
-        background-color: var(--lightgreen-color);
+        background-color: var(--primary-color);
 
         box-shadow: 0 0 20px rgba($color: #a8a8a8, $alpha: 0.15);
 
         svg {
             width: 25px;
             height: 25px;
-            color: var(--black-color);
+            color: var(--secondary-color);
 
             cursor: pointer;
         }
