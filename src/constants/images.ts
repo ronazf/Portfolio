@@ -1,6 +1,7 @@
 import logo from '../assets/logo.png';
-import tensorflow from '../assets/tensorflow.png';
+import about from '../assets/about.png';
+import marker from '../assets/marker.png';
 
-const exports = { logo, tensorflow };
+const exports = { logo, about, marker };
 
 export default exports;

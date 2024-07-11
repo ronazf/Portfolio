@@ -54,11 +54,11 @@ const Header: FC = () => {
         </div>
       </div>
       <div className='p-text app__header-info'>
-        <p className='header-text app__header-first-name'>{personalInfo.firstName}</p>
+        <p className='header-text app__header-first-name secondary-text'>{personalInfo.firstName}</p>
         <p className='header-lower-text tertiary-text app__header-last-name'>{personalInfo.lastName}</p>
-        <motion.p className='title-text'>{role.name}</motion.p>
+        <motion.p className='title-text secondary-text'>{role.name}</motion.p>
         <div>
-          <AnimatedText element='span' textClass={animatedRoles} className='p-large-text' />
+          <AnimatedText element='span' textClass={animatedRoles} className='p-large-text secondary-text' />
         </div>
       </div>
     </section >
