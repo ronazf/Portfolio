@@ -1,4 +1,4 @@
-import React, { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import React, { Dispatch, MutableRefObject, SetStateAction, Suspense } from 'react';
 import { View, PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import './Model.scss';
@@ -7,18 +7,23 @@ type ModelProps = {
     groupRef: MutableRefObject<any>,
     controlRef: MutableRefObject<any>,
     setRotationState: Dispatch<SetStateAction<number>>,
-    shape: React.JSX.Element
-
+    shape: React.JSX.Element,
+    index: number,
+    id: string
 };
 
 const Model = ({
     groupRef,
     controlRef,
     setRotationState,
-    shape
+    shape,
+    index,
+    id
 }: ModelProps) => {
     return (
         <View
+            index={index}
+            id={id}
             className='app__model'
         >
             <PerspectiveCamera />
@@ -35,8 +40,10 @@ const Model = ({
                 target={new THREE.Vector3(0, 0, 0)}
                 onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
             />
-            <group ref={groupRef} position={[0, 0, 0]}>
-                {shape}
+            <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0, 0]}>
+                <Suspense>
+                    {shape}
+                </Suspense>
             </group>
         </View>
     )

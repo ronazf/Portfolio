@@ -22,7 +22,9 @@ const FBOParticles = ({
 }: FBOParticleProps) => {
     const size = 350;
 
-    const scene = new THREE.Scene();
+    const scene = useMemo(() => {
+        return new THREE.Scene()
+    }, []);
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1);
     const positions = new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0]);
     const uvs = new Float32Array([0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]);
@@ -56,7 +58,7 @@ const FBOParticles = ({
         const { gl, clock } = state;
 
         gl.setRenderTarget(renderTarget);
-        gl.clear();
+        //gl.clear();
         gl.render(scene, camera);
         gl.setRenderTarget(null);
 

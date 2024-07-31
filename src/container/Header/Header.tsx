@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useRef, useState, useMemo } from 'react';
 
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
@@ -36,7 +36,7 @@ const Header: FC = () => {
 
   const model = useRef(new THREE.Group());
 
-  const [_, setModelRotation] = useState(0);
+  const [modelRotation, setModelRotation] = useState(0);
 
   return (
     <section id='home' className='app__header app__flex'>
@@ -46,8 +46,10 @@ const Header: FC = () => {
           controlRef={cameraControlModel}
           setRotationState={setModelRotation}
           shape={shape}
+          index={1}
+          id={"view1"}
         />
-        <div className='app__header-3d-div'>
+        <div className='shape-3d'>
           <Canvas eventSource={document.getElementById('root')}>
             <View.Port />
           </Canvas>
