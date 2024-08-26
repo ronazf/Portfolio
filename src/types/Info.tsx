@@ -1,3 +1,18 @@
+export interface Experience {
+    name: string;
+    duration: string;
+    languages: string;
+    image: string;
+    color: string;
+    margin: string;
+    description: string[];
+}
+
+export interface AboutDesc {
+    description: string;
+    goals: string;
+}
+
 type PersonalInfo = {
     firstName: string;
     lastName: string;

@@ -117,7 +117,9 @@
 
     position: relative;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: flex-start;
+
+    overflow: scroll;
 
     #education {
         background-color: #DEB6AB;
@@ -148,7 +150,7 @@
     
     min-height: 65vh;
     max-height: 65vh;
-    width: 22.5%;
+    min-width: 22.5%;
     margin: 1rem;
 
     flex: 1;
@@ -172,6 +174,8 @@
 
     img {
         max-width: 80%;
+
+        user-select: none;
     }
 }
 

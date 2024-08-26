@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState, useMemo } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
@@ -20,10 +20,10 @@ const Header: FC = () => {
   const personalInfo = info.personalInfo;
   const role = info.role;
   const roleLastIndex = role.fields.length - 1;
-  const filedSeperator = ' . ';
+  const fieldSeperator = ' . ';
   const animatedRoles: [string, string?][] = [];
   role.fields.forEach((field, index) => {
-    const modifiedField = field + (index !== roleLastIndex ? filedSeperator : '');
+    const modifiedField = field + (index !== roleLastIndex ? fieldSeperator : '');
     animatedRoles.push([modifiedField]);
   });
 

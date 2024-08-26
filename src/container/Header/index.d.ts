@@ -6,6 +6,8 @@ declare module 'three/examples/jsm/geometries/TextGeometry';
 declare module 'three/examples/jsm/loaders/FontLoader';
 declare module '@react-three/fiber';
 declare module '@react-three/drei';
+declare module '@sanity/client';
+declare module '@sanity/image-url';
 
 declare module JSX {
     interface IntrinsicElements {

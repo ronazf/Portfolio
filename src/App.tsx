@@ -9,7 +9,7 @@ import {
     Skills
 } from './container';
 import { Navbar } from './components';
-import './App.scss'
+import './App.scss';
 
 const App: FC = () => {
     return (

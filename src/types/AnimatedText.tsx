@@ -44,10 +44,10 @@ export const AnimatedText = ({
             transition={textAnimationDuration}
 
         >
-            {textClass?.map((element) => (
-                <span>
-                    {element[0].split('').map((char) => (
-                        <motion.span variants={textAnimations} className={element[1]}>
+            {textClass?.map((element, spanIndex) => (
+                <span key={spanIndex}>
+                    {element[0].split('').map((char, index) => (
+                        <motion.span variants={textAnimations} className={element[1]} key={index}>
                             {char}
                         </motion.span>
                     ))}
