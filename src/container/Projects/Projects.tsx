@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { urlFor, client } from '../../client.js';
 
 import './Projects.scss'
-import { images } from '../../constants'
 import { ProjectDetails } from '../../types/clientTypes.js';
 
 const Projects = () => {
