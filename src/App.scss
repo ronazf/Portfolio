@@ -2,6 +2,9 @@
     background-color: var(--primary-color);
     font-family: var(--font-base);
 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
     &:before {
         content: '';
         position: fixed;
@@ -265,4 +268,8 @@
     .copyright {
         padding: 2rem;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

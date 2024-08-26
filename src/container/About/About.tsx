@@ -3,7 +3,7 @@ import { images } from '../../constants';
 import { urlFor, client } from '../../client.js';
 
 import './About.scss'
-import { AboutDesc, Experience } from '../../types/Info';
+import { AboutDesc, Experience } from '../../types/clientTypes';
 
 const About = () => {
   const [about, setAbout] = useState<[]>([])

@@ -7,7 +7,8 @@ import uw from '../assets/uw.png';
 import sdc from '../assets/sdc.png';
 import geotab from '../assets/geotab.png';
 import ford from '../assets/ford.png';
+import logoPrimary from '../assets/logoPrimary.png';
 
-const exports = { logo, about, marker, normal, hdr, uw, sdc, geotab, ford };
+const exports = { logo, about, marker, normal, hdr, uw, sdc, geotab, ford, logoPrimary };
 
 export default exports;
