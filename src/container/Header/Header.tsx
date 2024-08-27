@@ -36,18 +36,13 @@ const Header: FC = () => {
 
   const model = useRef(new THREE.Group());
 
-  const [modelRotation, setModelRotation] = useState(0);
-
   return (
     <section id='home' className='app__header app__flex'>
       <div className='app__header-3d'>
         <Model
           groupRef={model}
           controlRef={cameraControlModel}
-          setRotationState={setModelRotation}
           shape={shape}
-          index={1}
-          id={"view1"}
         />
         <div className='shape-3d'>
           <Canvas eventSource={document.getElementById('root')}>

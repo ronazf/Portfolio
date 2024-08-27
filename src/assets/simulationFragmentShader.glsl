@@ -151,16 +151,12 @@ vec3 curlNoise(vec3 p) {
 
 
 void main() {
-  float strength = distance(gl_PointCoord, vec2(0.5));
-  strength = 1.0 - strength;
-  strength = pow(strength, 1.25);
-
   vec3 pos = texture2D(positions, vUv).rgb;
   vec3 curlPos = texture2D(positions, vUv).rgb;
 
-  pos = curlNoise(pos * uFrequency + uTime * strength);
+  pos = curlNoise(pos * uFrequency + uTime * 0.1);
   curlPos = curlNoise(curlPos * uFrequency + uTime * 0.01);
   curlPos += curlNoise(curlPos * uFrequency * 3.0) *  0.5;
 
-  gl_FragColor = vec4(mix(pos, curlPos, sin(uTime * strength)), 1.0);
+  gl_FragColor = vec4(mix(pos, curlPos, sin(uTime * 0.3)), 1.0);
 }

@@ -6,24 +6,16 @@ import './Model.scss';
 type ModelProps = {
     groupRef: MutableRefObject<any>,
     controlRef: MutableRefObject<any>,
-    setRotationState: Dispatch<SetStateAction<number>>,
-    shape: React.JSX.Element,
-    index: number,
-    id: string
+    shape: React.JSX.Element
 };
 
 const Model = ({
     groupRef,
     controlRef,
-    setRotationState,
-    shape,
-    index,
-    id
+    shape
 }: ModelProps) => {
     return (
         <View
-            index={index}
-            id={id}
             className='app__model'
         >
             <PerspectiveCamera />
@@ -38,9 +30,8 @@ const Model = ({
                 enablePan={false}
                 rotateSpeed={0.4}
                 target={new THREE.Vector3(0, 0, 0)}
-                onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
             />
-            <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0, 0]}>
+            <group ref={groupRef} position={[0, 0, 0]}>
                 <Suspense>
                     {shape}
                 </Suspense>
