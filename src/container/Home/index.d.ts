@@ -8,6 +8,7 @@ declare module '@react-three/fiber';
 declare module '@react-three/drei';
 declare module '@sanity/client';
 declare module '@sanity/image-url';
+declare module 'react-fast-marquee';
 
 declare module JSX {
     interface IntrinsicElements {

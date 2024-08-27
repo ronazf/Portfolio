@@ -1,0 +1,115 @@
+#home {
+    height: 100vh;
+    display: fixed;
+    position: relative;
+    overflow: hidden;
+
+    .app__wrapper {
+        padding: 0;
+
+        .copyright {
+            display: none;
+        }
+    }
+}
+
+.app__home {
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.app__home-intro {
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    user-select: none;
+}
+
+.app__home-info {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1300px) {
+        padding: 2rem;
+    }
+}
+
+.app__home-first-name {
+    z-index: 3;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    user-select: none;
+}
+
+.app__home-last-name {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    
+    margin-top: 10rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    user-select: none;
+
+    @media screen and (min-width: 2000px) {
+        margin-top: 12rem;
+    }
+
+    @media screen and (max-width: 1700px) {
+        margin-top: 8rem;
+    }
+
+    @media screen and (max-width: 850px) {
+        fmargin-top: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin-top: 4rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin-top: 2rem;
+    }
+}
+
+.app__home-3d {
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}

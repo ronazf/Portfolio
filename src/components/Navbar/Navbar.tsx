@@ -9,7 +9,7 @@ import './Navbar.scss';
 
 const Navbar: FC = () => {
   const [toggle, setToggle] = useState(false);
-  const menuItems = ['home', 'about', 'projects', 'skills'];
+  const menuItems = ['home', 'about', 'skills', 'projects'];
 
   return (
     <nav className='app__navbar'>

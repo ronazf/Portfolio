@@ -29,8 +29,6 @@
     height: 100%;
     width: 100%;
 
-    margin-top: 5rem;
-
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -43,19 +41,19 @@
 
 .app__projects-box {
     min-width: 45%;
-    max-width: 45%;
     height: 80%;
     background-color: #DDDDDD;
 
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-
     margin: 1rem;
 
-    align-items: flex-start;
-    justify-content: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    margin: 1rem;
 
     border-radius: 50px;
     box-shadow: 0 0 40px rgba($color: #a8a8a8, $alpha: 0.15);
@@ -113,6 +111,7 @@
     p {
         color: var(--primary-color);
 
+        margin: 1rem 2rem;
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
@@ -132,7 +131,7 @@
 
     p {
         color: var(--primary-color);
-        margin: 0.25rem;
+        margin: 1rem 2rem;
 
         font-size: 1.25rem;
         font-weight: 400;
@@ -143,12 +142,12 @@
 
 .app__projects-box-button {
     width: 100%;
-    margin: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
 
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     flex-direction: column;
 

@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import {
     About,
     Footer,
-    Header,
     Home,
     Projects,
     Skills
@@ -15,11 +14,10 @@ const App: FC = () => {
     return (
         <main className='app'>
             <Navbar />
-            <Header />
             <Home />
             <About />
-            <Projects />
             <Skills />
+            <Projects />
             <Footer />
         </main>
     )

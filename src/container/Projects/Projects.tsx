@@ -3,6 +3,7 @@ import { urlFor, client } from '../../client.js';
 
 import './Projects.scss'
 import { ProjectDetails } from '../../types/clientTypes.js';
+import AppWrap from '../../wrapper/AppWrap';
 
 const Projects = () => {
   const [projects, setProjects] = useState<[]>([])
@@ -50,4 +51,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default AppWrap(Projects, 'projects')

@@ -40,10 +40,10 @@
 
 .app__about-img {
     width: 35%;
-    height: 50%;
+    height: fit-content;
 
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
 
     img {
@@ -119,31 +119,8 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    overflow: scroll;
-
-    #education {
-        background-color: #DEB6AB;
-    }
-
-    #sdc {
-        background-color: #F2D7D9;
-
-        img {
-            margin: 2.5rem 0 3rem 0;
-        }
-    }
-
-    #geotab {
-        background-color: #C3DBD9;
-    }
-
-    #ford {
-        background-color: #D4E2D4;
-
-        img {
-            margin: 2.5rem 0 3rem 0;
-        }
-    }
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
 .app__about-experience-box {

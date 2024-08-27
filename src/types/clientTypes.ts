@@ -11,6 +11,12 @@ export interface Experience {
 export interface AboutDesc {
     description: string;
     goals: string;
+    image: string;
+}
+
+export interface SkillDetails {
+    name: string;
+    image: string;
 }
 
 export interface ProjectDetails {
