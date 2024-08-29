@@ -49,12 +49,12 @@
     display: flex;
     flex-direction: column;
 
-    padding: 2rem;
+    padding: 1rem;
     align-items: center;
     justify-content: flex-start;
 
     @media screen and (max-width: 1300px) {
-        padding: 2rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -92,8 +92,12 @@
         margin-top: 8rem;
     }
 
+    @media screen and (max-width: 1100px) {
+        margin-top: 6rem;
+    }
+
     @media screen and (max-width: 850px) {
-        fmargin-top: 1rem;
+        margin-top: 5rem;
     }
 
     @media screen and (max-width: 600px) {
@@ -103,6 +107,10 @@
     @media screen and (max-width: 450px) {
         margin-top: 2rem;
     }
+}
+
+.app__home-info-details {
+    margin-bottom: 3rem;
 }
 
 .app__home-3d {

@@ -62,4 +62,19 @@
         background-position: center;
         background-clip: content-box;
     }
+
+    @media screen and (max-width: 1000px) {
+        height: 100px;
+        width: 100px;
+    }
+
+    @media screen and (max-width: 850px) {
+        height: 85px;
+        width: 85px;
+    }
+
+    @media screen and (max-width: 450px) {
+        height: 65px;
+        width: 65px;
+    }
 }

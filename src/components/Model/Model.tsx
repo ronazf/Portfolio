@@ -1,5 +1,5 @@
-import React, { Dispatch, MutableRefObject, SetStateAction, Suspense } from 'react';
-import { View, PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import React, { MutableRefObject, Suspense } from 'react';
+import { View, OrthographicCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import './Model.scss';
 
@@ -18,19 +18,13 @@ const Model = ({
         <View
             className='app__model'
         >
-            <PerspectiveCamera />
+            <OrthographicCamera
+                makeDefault
+                position={[0, 0, 5]}
+                zoom={150}
+            />
             <pointLight position={[10, 10, 10]} />
             <ambientLight intensity={0.5} />
-            <OrbitControls
-                makeDefault
-                ref={controlRef}
-                autoRotate={true}
-                enableDamping={false}
-                enableZoom={false}
-                enablePan={false}
-                rotateSpeed={0.4}
-                target={new THREE.Vector3(0, 0, 0)}
-            />
             <group ref={groupRef} position={[0, 0, 0]}>
                 <Suspense>
                     {shape}

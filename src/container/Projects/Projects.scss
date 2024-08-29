@@ -36,7 +36,8 @@
     align-items: center;
     justify-content: flex-start;
 
-    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
 .app__projects-box {

@@ -1,26 +1,31 @@
-import React, { MutableRefObject, useMemo } from 'react';
-import { useFBO } from "@react-three/drei";
-import { useFrame, extend, createPortal } from "@react-three/fiber";
+import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
+import { useFBO, OrthographicCamera } from "@react-three/drei";
+import { useFrame, extend, createPortal, Canvas } from "@react-three/fiber";
 import * as THREE from 'three';
 import SimulationMaterial from './SimulationMaterial';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import fragmentShader from "!!raw-loader!../../assets/fragmentShader.glsl";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import vertexShader from "!!raw-loader!../../assets/vertexShader.glsl";
-import '../Model/Model.scss';
+import './scene.scss';
 
 extend({ SimulationMaterial: SimulationMaterial });
 
-type FBOParticleProps = {
-    points: MutableRefObject<any>,
-    simulationMaterialRef: MutableRefObject<any>
-};
+const FBOParticles = () => {
+    const points: React.MutableRefObject<any> = useRef();
+    const simulationMaterialRef: React.MutableRefObject<any> = useRef();
 
-const FBOParticles = ({
-    points,
-    simulationMaterialRef
-}: FBOParticleProps) => {
-    const size = 350;
+    const getSize = () => {
+        if (window.innerWidth <= 767) {
+            return 150
+        } else if (window.innerWidth <= 1024) {
+            return 250
+        } else {
+            return 350
+        }
+    };
+
+    const [size, setSize] = useState<number>(getSize())
 
     const scene = useMemo(() => {
         return new THREE.Scene()
@@ -58,7 +63,7 @@ const FBOParticles = ({
         const { gl, clock } = state;
 
         gl.setRenderTarget(renderTarget);
-        //gl.clear();
+        gl.clear();
         gl.render(scene, camera);
         gl.setRenderTarget(null);
 
@@ -109,4 +114,18 @@ const FBOParticles = ({
     );
 };
 
-export default FBOParticles;
+const Scene = () => {
+    return (
+        <Canvas>
+            <OrthographicCamera
+                makeDefault
+                position={[0, 0, 5]}
+                zoom={150}
+            />
+            <ambientLight intensity={0.5} />
+            <FBOParticles />
+        </Canvas>
+    );
+};
+
+export default Scene;

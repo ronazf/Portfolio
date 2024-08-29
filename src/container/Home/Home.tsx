@@ -1,4 +1,4 @@
-import React, { FC, useRef} from 'react';
+import React, { FC, useRef } from 'react';
 
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
@@ -13,6 +13,7 @@ import { View } from '@react-three/drei';
 import { Model } from '../../components';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import FBOParticles from '../../components/Geometry/FBOParticles';
+import Scene from '../../components/Geometry/FBOParticles';
 
 const Home: FC = () => {
   extend({ TextGeometry })
@@ -27,11 +28,6 @@ const Home: FC = () => {
     animatedRoles.push([modifiedField]);
   });
 
-  const points = useRef();
-  const simulationMaterialRef = useRef();
-
-  const shape = <FBOParticles points={points} simulationMaterialRef={simulationMaterialRef} />
-
   const cameraControlModel = useRef<Object3D>(null);
 
   const model = useRef(new THREE.Group());
@@ -39,22 +35,13 @@ const Home: FC = () => {
   return (
     <section className='app__home app__flex'>
       <div className='app__home-3d'>
-        <Model
-          groupRef={model}
-          controlRef={cameraControlModel}
-          shape={shape}
-        />
-        <div className='shape-3d'>
-          <Canvas eventSource={document.getElementById('root')}>
-            <View.Port />
-          </Canvas>
-        </div>
+        <Scene />
       </div>
       <div className='p-text app__home-info'>
         <p className='header-text app__home-first-name secondary-text'>{personalInfo.firstName}</p>
         <p className='header-lower-text tertiary-text app__home-last-name'>{personalInfo.lastName}</p>
         <motion.p className='title-text secondary-text'>{role.name}</motion.p>
-        <div>
+        <div className='app__home-info-details'>
           <AnimatedText element='span' textClass={animatedRoles} className='p-large-text secondary-text' />
         </div>
       </div>

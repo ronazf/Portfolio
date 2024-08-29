@@ -5,4 +5,7 @@
     position: absolute;
     align-items: center;
     justify-content: center;
+    touch-action: none;
+    pointer-events: none;
+    z-index: -1;
 }

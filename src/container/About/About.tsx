@@ -42,10 +42,10 @@ const About = () => {
             <img src={urlFor(aboutObj.image)} alt="Ronaz Farahmand" />
           </div>
           <div className='app__about-intro'>
-            <div className='tertiary-text app__about-intro-name'>
+            <div className='tertiary-text title-text app__about-intro-title'>
               <p>I’m Ronaz</p>
             </div>
-            <div className='app__about-intro-desc secondary-text'>
+            <div className='secondary-text p-medium-text app__about-intro-desc'>
               <p>
                 {aboutObj.description}
               </p>
