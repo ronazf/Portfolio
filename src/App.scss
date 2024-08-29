@@ -221,6 +221,25 @@
 }
 
 .p-medium-text {
+    width: 100%;
+
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.75;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 1100px) {
+        font-size: 1rem;
+    }
+}
+
+.p-medium-large-text {
+    width: 100%;
+
     font-size: 1.75rem;
     font-weight: 400;
     text-align: left;
@@ -230,11 +249,7 @@
         font-size: 2rem;
     }
 
-    @media screen and (max-width: 1450px) {
-        font-size: 1.5rem;
-    }
-
-    @media screen and (max-width: 1300px) {
+    @media screen and (max-width: 1600px) {
         font-size: 1.25rem;
     }
 
@@ -243,9 +258,27 @@
     }
 }
 
+.p-small-text {
+    p {
+
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0.25rem;
+    }
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 1100px) {
+        font-size: 0.75rem;
+    }
+}
+
 .p-large-text {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
     line-height: 1.75;
 
@@ -267,10 +300,6 @@
 
     @media screen and (max-width: 600px) {
         font-size: 1rem;
-    }
-
-    @media screen and (max-width: 520px) {
-        font-size: 0.85rem;
     }
 }
 

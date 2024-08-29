@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: row;
 
-    margin: 5rem;
+    margin-top: 5rem;
 
     align-items: flex-start;
     justify-content: space-between;
@@ -43,7 +43,7 @@
 
         justify-content: flex-start;
     }
-    
+
 }
 
 .app__about-img {
@@ -62,6 +62,10 @@
         box-shadow: 0 0 20px rgba($color: white, $alpha: 0.15);
 
         user-select: none;
+
+        @media screen and (max-width: 1000px) {
+            max-width: 50%;
+        }
     }
 
     @media screen and (max-width: 1000px) {
@@ -109,10 +113,9 @@
 }
 
 .app__about-experience {
-    width: 90%;
+    width: 95%;
     min-height: 75vh;
 
-    flex: 1;
     display: flex;
     flex-direction: row;
 
@@ -122,10 +125,18 @@
 
     overflow-y: hidden;
     overflow-x: scroll;
+
+    @media screen and (max-width: 1000px) {
+        min-height: 50vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: center;
+    }
 }
 
 .app__about-experience-box {
-    
+
     min-height: 65vh;
     max-height: 65vh;
     width: 22.5%;
@@ -141,24 +152,58 @@
 
     border-radius: 50px;
     box-shadow: 0 0 40px rgba($color: #a8a8a8, $alpha: 0.15);
+
+    @media screen and (max-width: 1000px) {
+        min-width: 35vw;
+        min-height: 250px;
+        max-height: 250px;
+
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        min-width: 45vw;
+        min-height: 200px;
+        max-height: 200px;
+
+        padding: 1rem;
+    }
 }
 
 .app__about-experience-logo {
+    min-height: 175px;
     width: 100%;
-    height: fit-content;
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+
 
     img {
-        max-width: 80%;
+        max-height: 120px;
+        max-width: 350px;
 
         user-select: none;
+
+        @media screen and (max-width: 1000px) {
+            max-width: 70%;
+            width: auto;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        min-height: 120px;
+    }
+
+    @media screen and (max-width: 450px) {
+        min-height: 125px;
     }
 }
 
 .app__about-experience-intro {
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -168,15 +213,19 @@
     p {
         color: var(--primary-color);
 
-        font-size: 1.25rem;
-        font-weight: 500;
-        line-height: 1.5;
+        margin: 0rem;
         text-align: center;
     }
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 1rem;
+        align-items: center;
+    }
+    
 }
 
 .app__about-experience-lang {
-    margin: 1rem; 
+    margin: 1rem;
 
     display: flex;
     align-items: center;
@@ -191,11 +240,15 @@
         font-weight: 400;
         line-height: 1.5;
         text-align: center;
+    }
+
+    @media screen and (max-width: 1000px) {
+        display: none;
     }
 }
 
 .app__about-experience-desc {
-    margin: 1rem 2rem; 
+    margin: 1rem 2rem;
 
     display: flex;
     align-items: center;
@@ -204,13 +257,11 @@
     flex-direction: column;
 
     p {
-        color: var(--primary-color);
-        margin: 0.25rem;
-
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
         text-align: left;
+    }
+
+    @media screen and (max-width: 1000px) {
+        display: none;
     }
 }
 

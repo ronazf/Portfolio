@@ -45,7 +45,7 @@ const About = () => {
             <div className='tertiary-text title-text app__about-intro-title'>
               <p>I’m Ronaz</p>
             </div>
-            <div className='secondary-text p-medium-text app__about-intro-desc'>
+            <div className='secondary-text p-medium-large-text app__about-intro-desc'>
               <p>
                 {aboutObj.description}
               </p>
@@ -60,16 +60,16 @@ const About = () => {
         {experience.map((experienceObj: Experience, divIndex: number) => (
           <div className='app__about-experience-box' key={divIndex} style={{ backgroundColor: experienceObj.color }}>
             <div className='app__about-experience-logo'>
-              <img src={urlFor(experienceObj.image)} alt="logo" style={{ margin: experienceObj.margin }} />
+              <img src={urlFor(experienceObj.image)} alt="logo" />
             </div>
             <div className='app__about-experience-intro'>
-              <p>{experienceObj.name}</p>
-              <p>{experienceObj.duration}</p>
+              <p className='p-medium-text'>{experienceObj.name}</p>
+              <p className='p-small-text'>{experienceObj.duration}</p>
             </div>
             <div className='app__about-experience-lang'>
               <p>{experienceObj.languages}</p>
             </div>
-            <div className='app__about-experience-desc'>
+            <div className='app__about-experience-desc p-small-text'>
               <ul>
                 {experienceObj.description.map((element: string, index: number) => (
                   <li key={index}>
