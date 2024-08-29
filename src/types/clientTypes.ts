@@ -4,7 +4,6 @@ export interface Experience {
     languages: string;
     image: string;
     color: string;
-    margin: string;
     description: string[];
 }
 

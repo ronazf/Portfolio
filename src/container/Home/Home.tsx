@@ -8,11 +8,8 @@ import './Home.scss';
 import { AnimatedText } from '../../types/AnimatedText';
 import * as THREE from 'three';
 import { Object3D } from 'three';
-import { Canvas, extend } from '@react-three/fiber';
-import { View } from '@react-three/drei';
-import { Model } from '../../components';
+import { extend } from '@react-three/fiber';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import FBOParticles from '../../components/Geometry/FBOParticles';
 import Scene from '../../components/Geometry/FBOParticles';
 
 const Home: FC = () => {
@@ -42,7 +39,7 @@ const Home: FC = () => {
         <p className='header-lower-text tertiary-text app__home-last-name'>{personalInfo.lastName}</p>
         <motion.p className='title-text secondary-text'>{role.name}</motion.p>
         <div className='app__home-info-details'>
-          <AnimatedText element='span' textClass={animatedRoles} className='p-large-text secondary-text' />
+          <AnimatedText element='span' textClass={animatedRoles} className='p-large-small-text secondary-text' />
         </div>
       </div>
     </section >

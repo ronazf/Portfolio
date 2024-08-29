@@ -28,7 +28,7 @@ const Navbar: FC = () => {
             </a>
           </li>
           <li className='app__flex p-text'>
-            <a href='https://linkedin.com/in/ronazfarahmand' target='_blank' rel='noreferrer'>
+            <a href='https://linkedin.com/in/ronazf' target='_blank' rel='noreferrer'>
               <BsLinkedin />
             </a>
           </li>

@@ -15,7 +15,7 @@ const personalInfo: PersonalInfo = {
 
 const role: Role = {
     name: 'Software Engineer',
-    fields: ['ML Engineer', 'Mobile Developer', 'Web Developer']
+    fields: ['Backend Developer', 'Mobile Developer', 'Web Developer']
 }
 
 export default {personalInfo, role};

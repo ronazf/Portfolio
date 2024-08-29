@@ -29,13 +29,13 @@ const Projects = () => {
               <img src={urlFor(projectObj.image)} alt="logo" />
             </div>
             <div className='app__projects-box-title'>
-              <p>{projectObj.name}</p>
+              <p className='p-large-title-text'>{projectObj.name}</p>
             </div>
             <div className='app__projects-box-lang'>
               <p>{projectObj.languages}</p>
             </div>
             <div className='app__projects-box-desc'>
-              <p>{projectObj.description}</p>
+              <p className='p-desc-text'>{projectObj.description}</p>
             </div>
             <div className='app__projects-box-button'>
               <a href={projectObj.link} target='_blank' rel='noreferrer'>

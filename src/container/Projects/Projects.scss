@@ -1,5 +1,5 @@
 #projects {
-    height: 100vh;
+    min-height: 100vh;
     display: fixed;
     position: relative;
 
@@ -43,7 +43,6 @@
 .app__projects-box {
     min-width: 45%;
     height: 80%;
-    background-color: #DDDDDD;
 
     margin: 1rem;
 
@@ -54,12 +53,24 @@
     align-items: center;
     justify-content: flex-start;
 
-    margin: 1rem;
-
     border-radius: 50px;
     box-shadow: 0 0 40px rgba($color: #a8a8a8, $alpha: 0.15);
 
     background: linear-gradient(135deg, #e2e2e2, #f5f5f5 25%, #d1d1d1 50%, #f5f5f5 75%, #e2e2e2);
+
+    @media screen and (max-width: 1000px) {
+        min-width: 450px;
+        height: 85%;
+
+        padding: 1rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        min-width: 350px;
+        height: 75%;
+
+        padding: 1rem;
+    }
 }
 
 .app__projects-box-logo {
@@ -76,6 +87,10 @@
         height: 100px;
 
         user-select: none;
+
+        @media screen and (max-width: 1000px) {
+            height: 75px;
+        }
     }
 }
 
@@ -88,15 +103,6 @@
     justify-content: flex-start;
 
     flex-direction: column;
-
-    p {
-        color: var(--primary-color);
-
-        font-size: 3rem;
-        font-weight: 500;
-        line-height: 1.5;
-        text-align: center;
-    }
 }
 
 .app__projects-box-lang {
@@ -122,7 +128,7 @@
 
 .app__projects-box-desc {
     width: 100%;
-    margin: 1rem 2rem;
+    margin: 1rem 1rem;
 
     display: flex;
     align-items: center;
@@ -130,19 +136,15 @@
 
     flex-direction: column;
 
-    p {
-        color: var(--primary-color);
-        margin: 1rem 2rem;
-
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: center;
+    @media screen and (max-width: 450px) {
+        display: none;
+        size: 0px;
     }
 }
 
 .app__projects-box-button {
     width: 100%;
+
     margin: 1rem 1rem 3rem 1rem;
 
     flex: 1;
