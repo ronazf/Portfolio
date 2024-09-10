@@ -24,7 +24,7 @@ const Skills = () => {
   return (
     <section id='skills' className='app__skills app__flex'>
       <div className='app__skills-row'>
-        <Marquee direction={"right"} autoFill={"true"}>
+        <Marquee direction={"right"} autoFill={true}>
           {skills.map((skillObj: SkillDetails, index: number) => (
             <div className='app__skills-obj' key={index}>
               <img src={urlFor(skillObj.image)} alt={skillObj.name} />
